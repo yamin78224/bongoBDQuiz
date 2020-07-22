@@ -1,0 +1,33 @@
+The program follows Factory pattern. Here Vehicle Interface is like a factory. 
+Here Car class and Plane class inherit Vehicle interface. That’s why Car class, Plane class have to implement all methods in Vehicle interface. 
+In addition, Car and Plane class follows common method between them. Based on their input Object can be initiated as Car object or Plane object.
+
+For use this pattern, we have to create another Class for shaping the object. Means, we have to create a class which decides  on input actually what object actually create.
+
+Example: 
+Class VehicleFactory{
+	Vehicle getVehicle(string type){
+	if(type==”Car”){
+		return new Car();
+	}else if(type==”Plane”){
+		return new Plane();
+	}else{
+		return null;
+	}
+}
+
+
+
+
+
+
+public class FactoryPatternDemoClass {
+   public static void main(String[] args) {
+	VehicleFactory temp = new VehicleFactory();
+	Vehicle obj1 = temp. getVehicle("Car");
+      	obj1. has_gas();
+	
+Vehicle obj2 = temp. getVehicle("Plane");
+      	obj2.has_gas();
+}
+}
